@@ -216,8 +216,6 @@ def run_ga(cities_names, n_population, n_generations, crossover_per, mutation_pe
     for i in best_fitness_indices:
         best_mixed_offspring.append(mixed_offspring[i])
 
-
-
     for i in range(0, n_generations):
         # if (i%10 == 0):
             # print("Generation: ", i)
