@@ -17,7 +17,7 @@ def objective(x, y):
   return -20.0 * exp(-0.2 * sqrt(0.5 * (x**2 + y**2))) - exp(0.5 * (cos(2 * pi * x) + cos(2 * pi * y))) + e + 20
 
 # define range for input
-r_min, r_max = 10.0, 1.0
+r_min, r_max = 1.0, 10.0
 # sample input range uniformly at 0.1 increments
 xaxis = arange(r_min, r_max, 0.1)
 yaxis = arange(r_min, r_max, 0.1)
@@ -99,7 +99,7 @@ def es_comma(objective, bounds, n_iter, step_size, mu, lam):
 # seed the pseudorandom number generator
 seed(1)
 # define range for input
-bounds = asarray([[10.0, 1.0], [10.0, 1.0]])
+bounds = asarray([[1.0, 10.0], [1.0, 10.0]])
 # define the total iterations
 n_iter = 5000
 # define the maximum step size
@@ -183,7 +183,7 @@ def es_plus(objective, bounds, n_iter, step_size, mu, lam):
 # seed the pseudorandom number generator
 seed(1)
 # define range for input
-bounds = asarray([[-5.0, 5.0], [-5.0, 5.0]])
+bounds = asarray([[1.0, 10.0], 1.0, 10.0]])
 # define the total iterations
 n_iter = 5000
 # define the maximum step size
