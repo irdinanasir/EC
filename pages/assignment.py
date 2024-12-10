@@ -1,8 +1,8 @@
 import csv
 import streamlit as st
 
-CO_R = st.number_input
-MUT_R = st.number_input
+CO_R = st.number_input("Crossover rate")
+MUT_R = st.number_input("Mutation rate")
 
 # Function to read the CSV file and convert it to the desired format
 def read_csv_to_dict(file_path):
