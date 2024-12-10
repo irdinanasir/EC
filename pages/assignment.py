@@ -3,6 +3,7 @@ import streamlit as st
 
 CO_R = st.number_input
 MUT_R = st.number_input
+
 # Function to read the CSV file and convert it to the desired format
 def read_csv_to_dict(file_path):
     program_ratings = {}
@@ -160,4 +161,4 @@ schedule_df = pd.DataFrame(schedule_program)
 st.write("\nFinal Optimal Schedule:")
 st.table(schedule_df)
 
-print("Total Ratings:", fitness_function(final_schedule))
+st.write("Total Ratings:", fitness_function(final_schedule))
