@@ -1,6 +1,8 @@
 import csv
 import streamlit as st
 
+CO_R = st.number_input
+MUT_R = st.number_input
 # Function to read the CSV file and convert it to the desired format
 def read_csv_to_dict(file_path):
     program_ratings = {}
@@ -36,8 +38,6 @@ ratings = program_ratings_dict
 
 GEN = 100
 POP = 50
-CO_R = st.number_input
-MUT_R = st.number_input
 EL_S = 2
 
 all_programs = list(ratings.keys()) # all programs
