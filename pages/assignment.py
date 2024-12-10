@@ -18,18 +18,18 @@ def read_csv_to_dict(file_path):
     return program_ratings
 
 # Path to the CSV file
-file_path = '/content/program_ratings.csv'
+file_path = 'program_ratings.csv'
 
 # Get the data in the required format
 program_ratings_dict = read_csv_to_dict(file_path)
 
 # Print the result (you can also return or process it further)
-for program, ratings in program_ratings_dict.items():
-    print(f"'{program}': {ratings},")
+# for program, ratings in program_ratings_dict.items():
+    # print(f"'{program}': {ratings},")
 
 
 import random
-
+import pandas as pd
 ##################################### DEFINING PARAMETERS AND DATASET ################################################################
 # Sample rating programs dataset for each time slot.
 ratings = program_ratings_dict
@@ -151,8 +151,13 @@ genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, pop
 
 final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
-print("\nFinal Optimal Schedule:")
-for time_slot, program in enumerate(final_schedule):
-    print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+schedule_program = {
+  "Time Slot": [f"{time_slot:02d}:00" for time_slot in all_time_slots],
+  "Program": final_schedule
+}
+schedule_df = pd.DataFrame(schedule_program)
+
+st.write("\nFinal Optimal Schedule:")
+st.table(schedule_df)
 
 print("Total Ratings:", fitness_function(final_schedule))
