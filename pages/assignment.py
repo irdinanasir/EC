@@ -1,7 +1,7 @@
 import csv
 import streamlit as st
 
-st.title("Assignment")
+st.title("Genetic Algorithm")
 st.header("TV Scheduling")
 st.write("### Parameters Input:")
 
