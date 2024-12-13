@@ -1,6 +1,10 @@
 import csv
 import streamlit as st
 
+st.title("Assignment")
+st.header("TV Scheduling")
+st.write("### Parameters Input:")
+
 CO_R = st.number_input("Crossover rate")  
 MUT_R = st.number_input("Mutation rate")
 
